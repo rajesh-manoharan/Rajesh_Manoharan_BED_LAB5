@@ -9,16 +9,16 @@ import com.greatlearning.ems.repository.EmployeeRepository;
 import com.greatlearning.ems.service.EmployeeService;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
 	private EmployeeRepository employeeRepository;
-	
+
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
 		this.employeeRepository = employeeRepository;
 	}
-	
+
 	@Override
-	public List<Employee> listEmployees() {	
+	public List<Employee> listEmployees() {
 		return employeeRepository.findAll();
 	}
 
@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public Employee updateEmployee(Employee employee) {
-			return employeeRepository.save(employee);
+		return employeeRepository.save(employee);
 	}
 
 	@Override
@@ -40,8 +40,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public void deleteById(int id) {
 		employeeRepository.deleteById(id);
-		
+
 	}
 
-	
 }
